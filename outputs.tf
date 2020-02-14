@@ -3,6 +3,11 @@ output "codebuild_project_id" {
   description = "The name (if imported via name) or ARN (if created via Terraform or imported via ARN) of the CodeBuild project."
 }
 
+output "codebuild_project_name" {
+  value       = aws_codebuild_project.default.name
+  description = "Codebuild project name.  Needed if desiring to set up webhooks via Terraform."
+}
+
 output "codebuild_project_arn" {
   value       = aws_codebuild_project.default.arn
   description = "The ARN of the CodeBuild project."
