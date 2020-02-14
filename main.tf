@@ -1,6 +1,6 @@
 # Ensure this code is only used with Terraform 0.12 and greater
 terraform {
-  version = ">= 0.12"
+  required_version = ">= 0.12"
 }
 
 # Terraform module which creates CodeBuild resources on AWS.
