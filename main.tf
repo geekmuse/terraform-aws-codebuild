@@ -9,6 +9,8 @@ terraform {
 
 # https://www.terraform.io/docs/providers/aws/r/codebuild_project.html
 resource "aws_codebuild_project" "default" {
+  depends_on = ["null_resource.module_depends_on"]
+
   name         = var.name
   description  = var.description
   service_role = aws_iam_role.default.arn
@@ -66,6 +68,8 @@ resource "aws_codebuild_project" "default" {
     # - NO_CACHE: The build project does not use any cache.
     # - S3: The build project reads and writes from and to S3.
     type = var.cache_type
+
+    modes = ["LOCAL_DOCKER_LAYER_CACHE", "LOCAL_SOURCE_CACHE"]
 
     # Information about the cache location:
     #
