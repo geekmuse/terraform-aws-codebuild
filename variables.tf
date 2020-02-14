@@ -64,8 +64,8 @@ variable "build_timeout" {
 }
 
 variable "enabled_ecr_access" {
-  default     = 1
-  type        = number
+  default     = true
+  type        = bool
   description = "If set to true, enables access to ECR."
 }
 
