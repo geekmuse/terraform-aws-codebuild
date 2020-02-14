@@ -39,6 +39,12 @@ variable "project_source" {
   description = "The type of repository that contains the source code to be built.  Valid values: CODECOMMIT|CODEPIPELINE|GITHUB|S3|BITBUCKET|GITHUB_ENTERPRISE|NO_SOURCE"
 }
 
+variable "project_location" {
+  default     = ""
+  type        = string
+  description = "Information about the location of the source code to be built.  Ignored if project_source = CODECOMMIT."
+}
+
 variable "buildspec" {
   default     = ""
   type        = string

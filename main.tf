@@ -9,7 +9,7 @@ terraform {
 
 # https://www.terraform.io/docs/providers/aws/r/codebuild_project.html
 resource "aws_codebuild_project" "default" {
-  depends_on = [ null_resource.module_depends_on ]
+  depends_on = [null_resource.module_depends_on]
 
   name         = var.name
   description  = var.description
@@ -51,8 +51,8 @@ resource "aws_codebuild_project" "default" {
   # Information about the build input source code for the build project.
   # https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ProjectSource.html
   source {
-    type = var.project_source
-
+    type     = var.project_source
+    location = var.project_location
     # The build spec declaration to use for this build project's related builds.
     # If you include a build spec as part of the source code, by default,
     # the build spec file must be named buildspec.yml and placed in the root of your source directory.
