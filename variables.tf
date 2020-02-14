@@ -34,8 +34,8 @@ variable "privileged_mode" {
 }
 
 variable "project_source" {
-  default = "CODECOMMIT"
-  type = string
+  default     = "CODECOMMIT"
+  type        = string
   description = "The type of repository that contains the source code to be built.  Valid values: CODECOMMIT|CODEPIPELINE|GITHUB|S3|BITBUCKET|GITHUB_ENTERPRISE|NO_SOURCE"
 }
 

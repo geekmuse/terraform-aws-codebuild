@@ -71,7 +71,7 @@ resource "aws_codebuild_project" "default" {
     #
     # - NO_CACHE: This value is ignored.
     # - S3: This is the S3 bucket name/prefix.
-    location = var.cache_location
+    location = var.cache_type == "S3" ? "s3://${var.cache_location}" : ""
   }
 
   # The KMS customer master key (CMK) to be used for encrypting the build output artifacts.
