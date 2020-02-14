@@ -39,6 +39,12 @@ variable "project_source" {
   description = "The type of repository that contains the source code to be built.  Valid values: CODECOMMIT|CODEPIPELINE|GITHUB|S3|BITBUCKET|GITHUB_ENTERPRISE|NO_SOURCE"
 }
 
+variable "artifact_type" {
+  default     = "CODEPIPELINE"
+  type        = string
+  description = "The build output artifact's type. Valid values for this parameter are: CODEPIPELINE, NO_ARTIFACTS or S3."
+}
+
 variable "project_location" {
   default     = ""
   type        = string

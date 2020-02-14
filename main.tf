@@ -18,7 +18,7 @@ resource "aws_codebuild_project" "default" {
   # Information about the build output artifacts for the build project.
   # https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ProjectArtifacts.html
   artifacts {
-    type = "CODEPIPELINE"
+    type = var.artifact_type
   }
 
   # Information about the build environment of the build project.
