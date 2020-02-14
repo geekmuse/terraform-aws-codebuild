@@ -49,7 +49,7 @@ resource "aws_codebuild_project" "default" {
   # Information about the build input source code for the build project.
   # https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ProjectSource.html
   source {
-    type = "CODEPIPELINE"
+    type = var.project_source
 
     # The build spec declaration to use for this build project's related builds.
     # If you include a build spec as part of the source code, by default,

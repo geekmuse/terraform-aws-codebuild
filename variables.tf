@@ -33,6 +33,12 @@ variable "privileged_mode" {
   description = "If set to true, enables running the Docker daemon inside a Docker container."
 }
 
+variable "project_source" {
+  default = "CODECOMMIT"
+  type = string
+  description = "The type of repository that contains the source code to be built.  Valid values: CODECOMMIT|CODEPIPELINE|GITHUB|S3|BITBUCKET|GITHUB_ENTERPRISE|NO_SOURCE"
+}
+
 variable "buildspec" {
   default     = ""
   type        = string
