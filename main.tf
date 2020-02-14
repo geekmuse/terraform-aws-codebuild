@@ -9,7 +9,7 @@ terraform {
 
 # https://www.terraform.io/docs/providers/aws/r/codebuild_project.html
 resource "aws_codebuild_project" "default" {
-  depends_on = ["null_resource.module_depends_on"]
+  depends_on = [ null_resource.module_depends_on ]
 
   name         = var.name
   description  = var.description
@@ -75,7 +75,7 @@ resource "aws_codebuild_project" "default" {
     #
     # - NO_CACHE: This value is ignored.
     # - S3: This is the S3 bucket name/prefix.
-    location = var.cache_type == "S3" ? "s3://${var.cache_location}" : ""
+    location = var.cache_type == "S3" ? var.cache_location : ""
   }
 
   # The KMS customer master key (CMK) to be used for encrypting the build output artifacts.
